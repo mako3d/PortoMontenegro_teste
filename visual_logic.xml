@@ -1,19 +1,141 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
-  <tab name="New Tab" type="CommonTab" active="true" scrollx="0" scrolly="45.00000000000023" scale="0.9">
-    <block xmlns="https://developers.google.com/blockly/xml" type="enterVRMode" id="DRXCrxXt%T5b~{qvl;CF" x="270" y="90">
-      <field name="REF_SPACE">SITTING</field>
-      <statement name="DO_ENTER">
-        <block type="comment" id="?rX:yR@o*Iu]9W#ST#Sr">
-          <field name="TEXT">VR ON</field>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="3169.034423828125" scrolly="2527.9853515625" scale="1">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="q-L6{@jZ.jc5V};]U(WD">vr_available</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id=";,B2Xh0tc*c0!o.tVJ!f" x="-3009" y="-2478">
+      <field name="NAME">reset_pose</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="j)gw1RY4yyrs}OS||5V`" x="-3010" y="-2350">
+      <field name="EVENT">click</field>
+      <field name="PARENT">TRUE</field>
+      <value name="ID">
+        <block type="text" id="PS_,(gGI3Zuj[h0~FR;M">
+          <field name="TEXT">enter_vr_button</field>
         </block>
-      </statement>
-      <statement name="DO_UNAVAIL">
-        <block type="comment" id="]ysyEWw,|^Xjr=.@tCMs">
-          <field name="TEXT">NO VR</field>
+      </value>
+      <statement name="DO">
+        <block type="controls_if" id="pMg$xn{)9-jQ=85KZaw@">
+          <mutation else="1"></mutation>
+          <value name="IF0">
+            <block type="variables_get" id="Pc%A.?+4Pw:xLM/v+.tn">
+              <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="enterVRMode" id="m)a_%bH6f:?|ssQVAssH">
+              <field name="REF_SPACE">SITTING</field>
+              <statement name="DO_ENTER">
+                <block type="procedures_callnoreturn" id="LP;?umIN+NiQnpLr:,A;">
+                  <mutation name="reset_pose"></mutation>
+                  <next>
+                    <block type="snapToObject" id="=XI~;[r?[4V~1NsT}T/u">
+                      <value name="SNAPWHAT">
+                        <block type="objectList" id="qNt!c5L*Tw%{UpB}%tO|">
+                          <field name="FIELDNAME">Camera</field>
+                        </block>
+                      </value>
+                      <value name="SNAPTO">
+                        <block type="objectList" id="Y-z$-_v26wHj*s9?o~q*">
+                          <field name="FIELDNAME">PLAYER</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="makeParent" id="w+QnfPV)suJF[w30QdXL">
+                          <value name="PARENT_WHAT">
+                            <block type="objectList" id="kw1MX)FX8grHB_`NH9[U">
+                              <field name="FIELDNAME">Camera</field>
+                            </block>
+                          </value>
+                          <value name="PARENT_TO">
+                            <block type="objectList" id="i_F]z$_=Ngc3EU7f}RQ/">
+                              <field name="FIELDNAME">PLAYER</field>
+                            </block>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <statement name="DO_EXIT">
+                <block type="procedures_callnoreturn" id="K4Sz-*8/Yc@|.XTHQ#*+">
+                  <mutation name="reset_pose"></mutation>
+                  <next>
+                    <block type="makeParent" id="i|o|g$p5g+.%Z%NB2_sK">
+                      <value name="PARENT_WHAT">
+                        <block type="objectList" id="P_q-X)(_^N*~UMNom+vO">
+                          <field name="FIELDNAME">Camera</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="setHTMLElemAttribute" id="mgkiuX0,HAJo:]J=2hBm">
+              <field name="ATTRIBUTE">innerHTML</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="text" id="h2]oX@~[$?TF1,~wduH^">
+                  <field name="TEXT">Please connect your VR device</field>
+                </block>
+              </value>
+              <value name="ID">
+                <block type="text" id="R`,l$25*OJAKT_$6D1x?">
+                  <field name="TEXT">vr_ar_warning_text</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemStyle" id="`a5pfQZr#;X-d(njI[et">
+                  <field name="PROPERTY">display</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="text" id="EdW:x38|OTU0NdH[mIC*">
+                      <field name="TEXT">block</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <block type="text" id="^;x+#[_6;ybtc`x(@6gt">
+                      <field name="TEXT">vr_warning_block</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setTimeout" id="U[2Z$UH|M-(]l%?A`8_f">
+                      <value name="VALUE">
+                        <shadow type="math_number" id="LMy?{0TVPx#l]@^_H=aL">
+                          <field name="NUM">3</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO">
+                        <block type="setHTMLElemStyle" id="{ZSSZ8iTCG!xYkrwE_wS">
+                          <field name="PROPERTY">display</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="VALUE">
+                            <block type="text" id="xY]*Tf2f_r6v_d?CkeBM">
+                              <field name="TEXT">none</field>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <block type="text" id="XTW`g)FI#o@~PzEeb!r8">
+                              <field name="TEXT">vr_warning_block</field>
+                            </block>
+                          </value>
+                        </block>
+                      </statement>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
         </block>
       </statement>
     </block>
   </tab>
-  <editorsettings viewport-x="1134" viewport-y="37" viewport-w="768" viewport-h="464.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+  <editorsettings viewport-x="1134" viewport-y="37" viewport-w="768" viewport-h="464.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
 </xml>

@@ -1,10 +1,16 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="20" scale="0.9"></tab>
-  <tab name="New Tab" type="CommonTab" active="true" scrollx="-108" scrolly="35" scale="0.9">
-    <block xmlns="https://developers.google.com/blockly/xml" type="checkVRMode" id="l-.]KZm+Bf)K}/%A$$QL" x="390" y="130">
-      <statement name="DO_AVAIL">
-        <block type="enterVRMode" id="XYj[+mz!xcC.;lNcpgcQ">
-          <field name="REF_SPACE">SITTING</field>
+  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="0" scrolly="45.00000000000023" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="enterVRMode" id="DRXCrxXt%T5b~{qvl;CF" x="270" y="90">
+      <field name="REF_SPACE">SITTING</field>
+      <statement name="DO_ENTER">
+        <block type="comment" id="?rX:yR@o*Iu]9W#ST#Sr">
+          <field name="TEXT">VR ON</field>
+        </block>
+      </statement>
+      <statement name="DO_UNAVAIL">
+        <block type="comment" id="]ysyEWw,|^Xjr=.@tCMs">
+          <field name="TEXT">NO VR</field>
         </block>
       </statement>
     </block>

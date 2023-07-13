@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
-  <tab name="New Tab" type="CommonTab" active="true" scrollx="488.97205885263713" scrolly="248.5301043020994" scale="0.9070294784580498">
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="551.4241943359373" scrolly="252.24194335937494" scale="1">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="q-L6{@jZ.jc5V};]U(WD">vr_available</variable>
     </variables>
@@ -42,7 +42,7 @@
         </block>
       </statement>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="checkVRMode" id="_E/0)%MQFMv$P)!NR6kX" x="10" y="70">
+    <block xmlns="https://developers.google.com/blockly/xml" type="checkVRMode" id="_E/0)%MQFMv$P)!NR6kX" x="-30" y="-10">
       <statement name="DO_AVAIL">
         <block type="variables_set" id="1UgKmt./_GuvbBPEtji!">
           <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
@@ -58,17 +58,57 @@
                   <field name="TEXT">VR ON</field>
                 </shadow>
               </value>
+              <next>
+                <block type="addAnnotation" id="4v@q/Y:6W?pRnfhcte7?">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+                  <value name="ANNOTATION">
+                    <shadow type="text" id="2meZ7_{;rY6_c1Q[lbl5">
+                      <field name="TEXT">1</field>
+                    </shadow>
+                  </value>
+                  <value name="TARGET">
+                    <shadow type="objectList" id="oU2Q`U,W!wA7]/2}6}Qr">
+                      <field name="FIELDNAME">Cube</field>
+                    </shadow>
+                  </value>
+                  <value name="CONTENTS">
+                    <shadow type="text" id="))FB@eQNGJny]BLYFS^D">
+                      <field name="TEXT">VR ON</field>
+                    </shadow>
+                  </value>
+                  <value name="ID">
+                    <shadow type="text" id="!I_klU`SRC}o~Jqr1/Wc">
+                      <field name="TEXT">poi1</field>
+                    </shadow>
+                  </value>
+                </block>
+              </next>
             </block>
           </next>
         </block>
       </statement>
       <statement name="DO_UNAVAIL">
-        <block type="variables_set" id="l+Knnz$m!v3XI5CTnBd6">
-          <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
-          <value name="VALUE">
-            <block type="logic_boolean" id="?R!JmAl:)0BGmL0Ni,Pw">
-              <field name="BOOL">FALSE</field>
-            </block>
+        <block type="addAnnotation" id="Uxp=J`5^$(U@s5CVwmk*">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
+          <value name="ANNOTATION">
+            <shadow type="text" id="_+}Eh5?k%)Un9tT,N5NW">
+              <field name="TEXT">1</field>
+            </shadow>
+          </value>
+          <value name="TARGET">
+            <shadow type="objectList" id="E#s:G.j[_:[#9tHDvou6">
+              <field name="FIELDNAME">Cube</field>
+            </shadow>
+          </value>
+          <value name="CONTENTS">
+            <shadow type="text" id=":sk$FH|faDEV$Wrdh-V`">
+              <field name="TEXT">VR OFF</field>
+            </shadow>
+          </value>
+          <value name="ID">
+            <shadow type="text" id="W+W73n[4je~|K/cM:Lgn">
+              <field name="TEXT">poi1</field>
+            </shadow>
           </value>
           <next>
             <block type="console.log" id="K1%//x+Zct`B#Pg|#cyl">
@@ -77,6 +117,16 @@
                   <field name="TEXT">VR OFF</field>
                 </shadow>
               </value>
+              <next>
+                <block type="variables_set" id="l+Knnz$m!v3XI5CTnBd6">
+                  <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
+                  <value name="VALUE">
+                    <block type="logic_boolean" id="?R!JmAl:)0BGmL0Ni,Pw">
+                      <field name="BOOL">FALSE</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
             </block>
           </next>
         </block>
@@ -101,7 +151,7 @@
       </value>
       <statement name="DO0">
         <block type="enterVRMode" id="m)a_%bH6f:?|ssQVAssH">
-          <field name="REF_SPACE">SITTING</field>
+          <field name="REF_SPACE">ORIGIN</field>
           <statement name="DO_ENTER">
             <block type="snapToObject" id="=XI~;[r?[4V~1NsT}T/u">
               <value name="SNAPWHAT">

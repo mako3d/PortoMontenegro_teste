@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
-  <tab name="New Tab" type="CommonTab" active="true" scrollx="551.4241943359373" scrolly="252.24194335937494" scale="1">
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="520.4939575195312" scrolly="248.76612854003912" scale="1">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="q-L6{@jZ.jc5V};]U(WD">vr_available</variable>
     </variables>
@@ -92,7 +92,7 @@
           <mutation xmlns="http://www.w3.org/1999/xhtml" usenameslot="false"></mutation>
           <value name="ANNOTATION">
             <shadow type="text" id="_+}Eh5?k%)Un9tT,N5NW">
-              <field name="TEXT">1</field>
+              <field name="TEXT">2</field>
             </shadow>
           </value>
           <value name="TARGET">
@@ -132,81 +132,87 @@
         </block>
       </statement>
     </block>
-    <block xmlns="https://developers.google.com/blockly/xml" type="controls_if" id="pMg$xn{)9-jQ=85KZaw@" x="10" y="250">
-      <mutation else="1"></mutation>
-      <value name="IF0">
-        <block type="logic_compare" id="jiRn2=Y1ll+2d:=*+Pyh">
-          <field name="OP">EQ</field>
-          <value name="A">
-            <block type="variables_get" id="Pc%A.?+4Pw:xLM/v+.tn">
-              <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
-            </block>
-          </value>
-          <value name="B">
-            <block type="logic_boolean" id="ydMs7kKq5LbWOyB1da[_">
-              <field name="BOOL">TRUE</field>
-            </block>
-          </value>
-        </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="?W+Tv$~FX:(#4x^)QF{Q" inline="false" x="-210" y="290">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="V#(ZPDFEr6Z]+t[;IJ6I">
+          <field name="FIELDNAME">Cube</field>
+        </shadow>
       </value>
-      <statement name="DO0">
-        <block type="enterVRMode" id="m)a_%bH6f:?|ssQVAssH">
-          <field name="REF_SPACE">ORIGIN</field>
-          <statement name="DO_ENTER">
-            <block type="snapToObject" id="=XI~;[r?[4V~1NsT}T/u">
-              <value name="SNAPWHAT">
-                <block type="objectList" id="qNt!c5L*Tw%{UpB}%tO|">
-                  <field name="FIELDNAME">Camera</field>
+      <statement name="DO">
+        <block type="controls_if" id="pMg$xn{)9-jQ=85KZaw@">
+          <mutation else="1"></mutation>
+          <value name="IF0">
+            <block type="logic_compare" id="jiRn2=Y1ll+2d:=*+Pyh">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="Pc%A.?+4Pw:xLM/v+.tn">
+                  <field name="VAR" id="q-L6{@jZ.jc5V};]U(WD">vr_available</field>
                 </block>
               </value>
-              <value name="SNAPTO">
-                <block type="objectList" id="Y-z$-_v26wHj*s9?o~q*">
-                  <field name="FIELDNAME">PLAYER</field>
+              <value name="B">
+                <block type="logic_boolean" id="ydMs7kKq5LbWOyB1da[_">
+                  <field name="BOOL">TRUE</field>
                 </block>
               </value>
-              <next>
-                <block type="makeParent" id="w+QnfPV)suJF[w30QdXL">
-                  <value name="PARENT_WHAT">
-                    <block type="objectList" id="kw1MX)FX8grHB_`NH9[U">
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="enterVRMode" id="m)a_%bH6f:?|ssQVAssH">
+              <field name="REF_SPACE">ORIGIN</field>
+              <statement name="DO_ENTER">
+                <block type="snapToObject" id="=XI~;[r?[4V~1NsT}T/u">
+                  <value name="SNAPWHAT">
+                    <block type="objectList" id="qNt!c5L*Tw%{UpB}%tO|">
                       <field name="FIELDNAME">Camera</field>
                     </block>
                   </value>
-                  <value name="PARENT_TO">
-                    <block type="objectList" id="i_F]z$_=Ngc3EU7f}RQ/">
+                  <value name="SNAPTO">
+                    <block type="objectList" id="Y-z$-_v26wHj*s9?o~q*">
                       <field name="FIELDNAME">PLAYER</field>
                     </block>
                   </value>
+                  <next>
+                    <block type="makeParent" id="w+QnfPV)suJF[w30QdXL">
+                      <value name="PARENT_WHAT">
+                        <block type="objectList" id="kw1MX)FX8grHB_`NH9[U">
+                          <field name="FIELDNAME">Camera</field>
+                        </block>
+                      </value>
+                      <value name="PARENT_TO">
+                        <block type="objectList" id="i_F]z$_=Ngc3EU7f}RQ/">
+                          <field name="FIELDNAME">PLAYER</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
                 </block>
-              </next>
-            </block>
-          </statement>
-          <statement name="DO_EXIT">
-            <block type="makeParent" id="i|o|g$p5g+.%Z%NB2_sK">
-              <value name="PARENT_WHAT">
-                <block type="objectList" id="P_q-X)(_^N*~UMNom+vO">
-                  <field name="FIELDNAME">Camera</field>
+              </statement>
+              <statement name="DO_EXIT">
+                <block type="makeParent" id="i|o|g$p5g+.%Z%NB2_sK">
+                  <value name="PARENT_WHAT">
+                    <block type="objectList" id="P_q-X)(_^N*~UMNom+vO">
+                      <field name="FIELDNAME">Camera</field>
+                    </block>
+                  </value>
                 </block>
-              </value>
+              </statement>
+              <statement name="DO_UNAVAIL">
+                <block type="console.log" id="A!*zuh*}K+Q,qfxJ9I)@">
+                  <value name="VALUE">
+                    <shadow type="text" id="DOg%)OlBjgk4]8i;VHdv">
+                      <field name="TEXT">Hello, Verge!</field>
+                    </shadow>
+                  </value>
+                </block>
+              </statement>
             </block>
           </statement>
-          <statement name="DO_UNAVAIL">
-            <block type="console.log" id="A!*zuh*}K+Q,qfxJ9I)@">
-              <value name="VALUE">
-                <shadow type="text" id="DOg%)OlBjgk4]8i;VHdv">
-                  <field name="TEXT">Hello, Verge!</field>
-                </shadow>
-              </value>
-            </block>
-          </statement>
-        </block>
-      </statement>
-      <statement name="ELSE">
-        <block type="console.log" id="s6yq}12dJLD(_sakj%Vn">
-          <value name="VALUE">
-            <shadow type="text" id=",rNUDGSmeuvq]cd%#jf)">
-              <field name="TEXT">VR OFF</field>
-            </shadow>
-          </value>
         </block>
       </statement>
     </block>
